@@ -1,0 +1,76 @@
+.friend-group {
+  margin: 2rem 0 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.friend-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 0 0 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .friend-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: rgb(0 0 0 / 3%);
+  color: inherit;
+  text-decoration: none;
+}
+
+.dark .friend-card {
+  background: rgb(255 255 255 / 8%);
+}
+
+.friend-card:hover {
+  background: rgb(0 0 0 / 6%);
+}
+
+.dark .friend-card:hover {
+  background: rgb(255 255 255 / 12%);
+}
+
+.friend-card img {
+  width: 3rem;
+  height: 3rem;
+  max-width: 3rem;
+  margin: 0;
+  flex: none;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.friend-card .friend-text {
+  min-width: 0;
+}
+
+.friend-card .friend-name {
+  display: block;
+  font-weight: 560;
+  line-height: 1.35;
+}
+
+.friend-card .friend-desc {
+  display: -webkit-box;
+  margin-top: 0.15rem;
+  overflow: hidden;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  opacity: 0.62;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

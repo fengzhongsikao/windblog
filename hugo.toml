@@ -1,0 +1,62 @@
+baseURL = 'https://example.org/'
+locale = 'en-us'
+title = "wind's blog"
+theme = 'paper'
+
+
+[params]
+  # home page only lists pages in these sections.
+  # articles set type = "post" in front matter.
+  # about and links stay type "page", so they stay out of this list.
+  mainSections = ["post"]
+
+  # color style
+  color = 'linen'                           # linen, wheat, gray, light
+
+  # header social icons
+  github = 'fengzhongsikao'                 # github.com/YOUR_GITHUB_ID
+  rss = false                                # show rss icon
+
+  # home page profile
+  avatar = 'https://free.picui.cn/free/19515/2026/09/07/6a9e27c140a87.png'                 # gravatar email or image url
+  name = 'wind'
+  bio = '你看此花开时,此花与汝同归于寂'
+
+
+  # misc
+  disableHLJS = false                        # disable highlight.js
+  disablePostNavigation = false              # disable post navigation
+  monoDarkIcon = true                       # show monochrome dark mode icon
+  gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
+  math = false                               # enable KaTeX math typesetting globally
+  localKatex = false                        # use local KaTeX js/css instead of CDN
+  graphCommentId = ""                       # leave empty to disable GraphComment
+  favicon = "favicon.ico"                   # customize the default favicon
+  appleTouchIcon = "apple-touch-icon.png"   # customize the default Apple touch icon
+
+  # RTL supprot
+  direction = "ltr"                         # RTL support for Right-to-left languages
+
+  # comments are stored as GitHub Discussions via giscus.
+  # leave repo empty to hide the comment box.
+  # fill these in from https://giscus.app after the repo is public.
+[params.giscus]
+  repo = ""                                 # fengzhongsikao/仓库名
+  repoId = ""
+  category = "Announcements"
+  categoryId = ""
+  mapping = "pathname"
+  theme = "preferred_color_scheme"
+  lang = "zh-CN"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "links"
+    name = "友链"
+    url = "/links/"
+    weight = 20

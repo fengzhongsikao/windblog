@@ -1,0 +1,28 @@
+{{- $links := where hugo.Data.links "enabled" true -}}
+{{- $links = sort $links "weight" "desc" -}}
+
+{{- $tags := slice -}}
+{{- range $links -}}
+  {{- range .tags -}}
+    {{- if not (in $tags .) -}}
+      {{- $tags = $tags | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="not-prose">
+  {{- range $tag := $tags -}}
+  <h2 class="friend-group">{{- $tag -}}</h2>
+  <div class="friend-list">
+    {{- range where $links "tags" "intersect" (slice $tag) -}}
+    <a class="friend-card" href="{{- .siteurl -}}" target="_blank" rel="noopener noreferrer">
+      <img src="{{- .imgurl -}}" alt="" />
+      <span class="friend-text">
+        <span class="friend-name">{{- .title -}}</span>
+        <span class="friend-desc">{{- .desc -}}</span>
+      </span>
+    </a>
+    {{- end -}}
+  </div>
+  {{- end -}}
+</div>
