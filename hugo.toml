@@ -41,10 +41,10 @@ theme = 'paper'
   # leave repo empty to hide the comment box.
   # fill these in from https://giscus.app after the repo is public.
 [params.giscus]
-  repo = ""                                 # fengzhongsikao/仓库名
-  repoId = ""
+  repo = "fengzhongsikao/giscus-comments"                                 # fengzhongsikao/仓库名
+  repoId = "R_kgDOV0DkVA"
   category = "Announcements"
-  categoryId = ""
+  categoryId = "DIC_kwDOV0DkVM4DLewF"
   mapping = "pathname"
   theme = "preferred_color_scheme"
   lang = "zh-CN"
