@@ -9,10 +9,8 @@ if [[ ! -f themes/paper/theme.toml ]]; then
   git clone --depth 1 https://github.com/nanxiaobei/hugo-paper.git themes/paper
 fi
 
-if [[ "${VERCEL_ENV:-}" == "production" && -n "${VERCEL_PROJECT_PRODUCTION_URL:-}" ]]; then
-  BASE_URL="https://${VERCEL_PROJECT_PRODUCTION_URL}/"
-else
-  BASE_URL="https://${VERCEL_URL}/"
-fi
-
-hugo --gc --minify --baseURL "${BASE_URL}"
+# Article cards use absolute Permalinks. Do not bake in VERCEL_URL:
+# that hostname is the single deployment, and with Standard Deployment
+# Protection Vercel answers it with 404 DEPLOYMENT_NOT_FOUND. A relative
+# baseURL keeps links on the host the visitor already opened.
+hugo --gc --minify --baseURL /
